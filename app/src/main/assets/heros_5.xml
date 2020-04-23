@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Hero>
+    <Hero>
+        <name>好运姐</name>
+        <race>女武神</race>
+        <profession>枪手</profession>
+        <cost>5</cost>
+    </Hero>
+    <Hero>
+        <name>船长</name>
+        <race>海盗</race>
+        <profession>爆破专家</profession>
+        <cost>5</cost>
+    </Hero>
+    <Hero>
+        <name>泽拉斯</name>
+        <race>暗星</race>
+        <profession>法师</profession>
+        <cost>5</cost>
+    </Hero>
+    <Hero>
+        <name>璐璐</name>
+        <race>星神</race>
+        <profession>秘术师</profession>
+        <cost>5</cost>
+    </Hero>
+    <Hero>
+        <name>龙王</name>
+        <race>奥德赛</race>
+        <profession>星舰龙神</profession>
+        <cost>5</cost>
+    </Hero>
+    <Hero>
+        <name>艾克</name>
+        <race>源计划</race>
+        <profession>刺客</profession>
+        <cost>5</cost>
+    </Hero>
+    <Hero>
+        <name>锤石</name>
+        <race>未来战士</race>
+        <profession>破法战士</profession>
+        <cost>5</cost>
+    </Hero>
+</Hero>

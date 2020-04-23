@@ -7,7 +7,7 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:textSize="30dp"
+        android:textSize="20dp"
         android:text="云顶之奕阵容模拟器"
         android:background="@color/colorPrimaryDark"/>
 

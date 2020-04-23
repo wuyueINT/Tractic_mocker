@@ -1,11 +1,9 @@
 package com.wuyue.recyclerview;
 
-import android.content.Context;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -14,11 +12,8 @@ import androidx.recyclerview.widget.RecyclerView;
 import androidx.recyclerview.widget.StaggeredGridLayoutManager;
 
 import com.wuyue.tractic_mocker.Hero;
-import com.wuyue.tractic_mocker.Profession;
 import com.wuyue.tractic_mocker.R;
-import com.wuyue.tractic_mocker.Race;
 
-import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 

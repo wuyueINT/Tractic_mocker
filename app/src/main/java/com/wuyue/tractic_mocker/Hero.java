@@ -3,27 +3,20 @@ package com.wuyue.tractic_mocker;
 import android.os.Parcel;
 import android.os.Parcelable;
 
-import java.io.Serializable;
-
-public class Hero implements Parcelable {
+public class Hero implements Parcelable, Cloneable{
 
     private String name;
     private String race;
     private String pro;
-    private int cost;
+    private String cost;
 
-    public Hero(String name, Race race, Profession pro, int cost) {
-        this.name = name;
-        this.race = race.toString();
-        this.pro = pro.toString();
-        this.cost = cost;
-    }
+    public Hero(){}
 
     private Hero(Parcel in) {
         name = in.readString();
         race = in.readString();
         pro = in.readString();
-        cost = in.readInt();
+        cost = in.readString();
     }
 
     public static final Creator<Hero> CREATOR = new Creator<Hero>() {
@@ -50,16 +43,24 @@ public class Hero implements Parcelable {
         return race;
     }
 
-    public void setRace(Race race) {
-        this.race = race.toString();
+    public void setRace(String race) {
+        this.race = race;
     }
 
     public String getPro() {
         return pro;
     }
 
-    public void setPro(Profession pro) {
-        this.pro = pro.toString();
+    public void setPro(String pro) {
+        this.pro = pro;
+    }
+
+    public String getCost() {
+        return cost;
+    }
+
+    public void setCost(String cost) {
+        this.cost = cost;
     }
 
     @Override
@@ -72,6 +73,16 @@ public class Hero implements Parcelable {
         dest.writeString(name);
         dest.writeString(race);
         dest.writeString(pro);
-        dest.writeInt(cost);
+        dest.writeString(cost);
+    }
+
+    @Override
+    protected Hero clone() throws CloneNotSupportedException {
+        Hero hero = new Hero();
+        hero.name = this.name;
+        hero.race = this.race;
+        hero.pro = this.pro;
+        hero.cost = this.cost;
+        return hero;
     }
 }

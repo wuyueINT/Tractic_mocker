@@ -1,11 +1,14 @@
 package com.wuyue.tractic_mocker;
 
+import androidx.core.app.ActivityCompat;
+import androidx.core.content.ContextCompat;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentActivity;
 import androidx.fragment.app.FragmentPagerAdapter;
 import androidx.viewpager.widget.ViewPager;
 
 
+import android.content.pm.PackageManager;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.util.DisplayMetrics;
@@ -22,6 +25,7 @@ import com.wuyue.recyclerview.Fragment04;
 import com.wuyue.recyclerview.Fragment05;
 import com.wuyue.recyclerview.BlankFragment;
 
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -49,6 +53,12 @@ public class MainActivity extends FragmentActivity implements BlankFragment.Frag
     Map<String, Integer> raceMap;
     Map<String, Integer> proMap;
 
+    //动态权限申请
+    private String[] PERMISSIONS_STORAGE = {
+            "android.permission.READ_EXTERNAL_STORAGE",
+            "android.permission.WRITE_EXTERNAL_STORAGE",
+            "android.permission.ACCESS_FINE_LOCATION"};
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -60,6 +70,7 @@ public class MainActivity extends FragmentActivity implements BlankFragment.Frag
 
         initTabLine();
         initView();
+        requestPermission(PERMISSIONS_STORAGE);
     }
 
     //初始化滑动条
@@ -93,24 +104,26 @@ public class MainActivity extends FragmentActivity implements BlankFragment.Frag
         tv5 = findViewById(R.id.textView5);
         fragments = new ArrayList<>();
 
-        //模拟heros数据
-        ArrayList<Hero> heros = new ArrayList<>();
-        heros.add(new Hero("卡牌", Race.WEI_LAI, Profession.FASHI, 1));
-        heros.add(new Hero("霞", Race.XING_SHEN, Profession.JIANSHI, 1));
-        heros.add(new Hero("石头人", Race.AO_DE_SAI, Profession.DOUSHI, 1));
-
-
-        BlankFragment fragment = BlankFragment.newInstance(heros);
-        Fragment02 fragment2 = new Fragment02();
-        Fragment03 fragment3 = new Fragment03();
-        Fragment04 fragment4 = new Fragment04();
-        Fragment05 fragment5 = new Fragment05();
-
-        fragments.add(fragment);
-        fragments.add(fragment2);
-        fragments.add(fragment3);
-        fragments.add(fragment4);
-        fragments.add(fragment5);
+        //从xml文件中解析heros数据
+        ArrayList<Hero> heros1 = null;
+        ArrayList<Hero> heros2 = null;
+        ArrayList<Hero> heros3 = null;
+        ArrayList<Hero> heros4 = null;
+        ArrayList<Hero> heros5 = null;
+        try {
+            heros1 = XmlParser.parseXml(getAssets().open("heros_1.xml"));
+            heros2 = XmlParser.parseXml(getAssets().open("heros_2.xml"));
+            heros3 = XmlParser.parseXml(getAssets().open("heros_3.xml"));
+            heros4 = XmlParser.parseXml(getAssets().open("heros_4.xml"));
+            heros5 = XmlParser.parseXml(getAssets().open("heros_5.xml"));
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        fragments.add(BlankFragment.newInstance(heros1));
+        fragments.add(BlankFragment.newInstance(heros2));
+        fragments.add(BlankFragment.newInstance(heros3));
+        fragments.add(BlankFragment.newInstance(heros4));
+        fragments.add(BlankFragment.newInstance(heros5));
 
         //设置适配器
         vp.setAdapter(new FragmentPagerAdapter(getSupportFragmentManager()) {
@@ -196,7 +209,22 @@ public class MainActivity extends FragmentActivity implements BlankFragment.Frag
                 tv_main.setText("");
             }
         });
+    }
 
+    public void requestPermission(String[] permissions){
+        List<String> permissionList = new ArrayList<>();
+        // 遍历每一个申请的权限，把没有通过的权限放在集合中
+        for (String permission : permissions) {
+            if (ContextCompat.checkSelfPermission(this, permission) !=
+                    PackageManager.PERMISSION_GRANTED) {
+                permissionList.add(permission);
+            }
+        }
+        // 申请权限
+        if (!permissionList.isEmpty()) {
+            ActivityCompat.requestPermissions(this,
+                    permissionList.toArray(new String[permissionList.size()]), 1);
+        }
     }
 
     @Override
