@@ -1,0 +1,6 @@
+package com.wuyue.tractic_mocker;
+
+public enum Profession {
+    FASHI,SHENGDUN,ZHONGZHUANG,MISHU,JUSHEN,CIKE,
+    DOUSHI,JIANSHI,QIANGSHOU,BAOPO,YONGBING,POFA,XINGJI
+}
