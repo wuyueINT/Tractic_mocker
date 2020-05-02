@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<Hero>
+<Heros>
     <Hero>
         <name>剑圣</name>
         <race>奥德赛</race>
@@ -72,4 +72,4 @@
         <profession>圣盾使</profession>
         <cost>3</cost>
     </Hero>
-</Hero>
+</Heros>

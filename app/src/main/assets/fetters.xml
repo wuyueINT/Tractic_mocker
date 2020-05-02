@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<fetters>
+    <fetter>
+        <name>未来战士</name>
+        <herosInFetter>卡牌大师、皮城女警、蒸汽机器人、猴子齐天大圣、探险家伊泽瑞尔、暮光之眼慎、魂锁典狱长锤石</herosInFetter>
+        <effectOfFetter>
+            加攻速
+        </effectOfFetter>
+
+    </fetter>
+    <fetter>
+        <name>奥德赛</name>
+        <herosInFetter>无极剑圣易、琴瑟仙女娑娜、熔岩巨兽莫菲特、爆破鬼才吉格斯、铸星龙王索尔、疾风剑豪亚索、暴走萝莉金克斯</herosInFetter>
+        <effectOfFetter>
+            加生命值
+        </effectOfFetter>
+
+    </fetter>
+    <fetter>
+        <name>暗星</name>
+        <herosInFetter>德玛西亚皇子嘉文四世、铁铠冥魂莫德凯撒、光辉女郎拉克丝、远古巫灵泽拉斯、戏命师烬、恶魔小丑萨科、天启者卡尔玛</herosInFetter>
+        <effectOfFetter>
+            干掉敌人后加伤害
+        </effectOfFetter>
+
+    </fetter>
+    <fetter>
+        <name>星守</name>
+        <herosInFetter>圣锤之毅波比、九尾妖狐阿狸、暗黑元首辛德拉、暮光星灵佐伊、万花通灵妮蔻、众星之子索拉卡</herosInFetter>
+        <effectOfFetter>
+            一个人放技能后别人也能放技能
+        </effectOfFetter>
+
+    </fetter>
+    <fetter>
+        <name>源计划</name>
+        <herosInFetter>刀锋舞者艾瑞利亚、曙光女神雷欧娜、无双剑姬菲奥娜、圣枪游侠卢锡安、时间刺客艾克、皮城执法官蔚</herosInFetter>
+        <effectOfFetter>
+            都有装备就加生命值加攻击力
+        </effectOfFetter>
+
+    </fetter>
+    <fetter>
+        <name>太空海盗</name>
+        <herosInFetter>海洋之灾普朗克、法外狂徒格雷福斯、诺克萨斯之手德莱厄斯、未来守护者杰斯</herosInFetter>
+        <effectOfFetter>
+            杀死敌人掉钱
+        </effectOfFetter>
+
+    </fetter>
+    <fetter>
+        <name>虚空</name>
+        <herosInFetter>虚空恐惧科加斯、虚空掠夺者卡兹克、虚空之眼维克兹</herosInFetter>
+        <effectOfFetter>
+            造成真实伤害
+        </effectOfFetter>
+
+    </fetter>
+    <fetter>
+        <name>星神</name>
+        <herosInFetter>德邦总管赵信、寒冰射手艾希、虚空行者卡萨丁、仙灵女巫璐璐、幻翎洛、逆羽霞</herosInFetter>
+        <effectOfFetter>
+            吸血
+        </effectOfFetter>
+
+    </fetter>
+    <fetter>
+        <name>女武神</name>
+        <herosInFetter>正义天使凯尔、赏金猎人厄运小姐、虚空之女卡莎</herosInFetter>
+        <effectOfFetter>
+            造成真实伤害
+        </effectOfFetter>
+
+    </fetter>
+    <fetter>
+        <name>机甲</name>
+        <herosInFetter>黑暗之女安妮、机械公敌兰博、潮汐海灵菲兹</herosInFetter>
+        <effectOfFetter>
+            开机甲
+        </effectOfFetter>
+
+    </fetter>
+    <fetter>
+        <name>枪手</name>
+        <herosInFetter>赏金猎人厄运小姐、探险家伊泽瑞尔、法外狂徒格雷福斯、暴走萝莉金克斯、圣枪游侠卢锡安</herosInFetter>
+        <effectOfFetter>
+            溅射攻击
+        </effectOfFetter>
+
+    </fetter>
+    <fetter>
+        <name>剑士</name>
+        <herosInFetter>正义天使凯尔、无极剑圣易、刀锋舞者艾瑞利亚、暮光之眼慎、无双剑姬菲奥娜、疾风剑豪亚索、逆羽霞</herosInFetter>
+        <effectOfFetter>
+            多重攻击
+        </effectOfFetter>
+
+    </fetter>
+    <fetter>
+        <name>爆破专家</name>
+        <herosInFetter>海洋之灾普朗克、机械公敌兰博、爆破鬼才吉格斯</herosInFetter>
+        <effectOfFetter>
+            技能造成眩晕
+        </effectOfFetter>
+
+    </fetter>
+    <fetter>
+        <name>刺客</name>
+        <herosInFetter>恶魔小丑萨科、潮汐海灵菲兹、虚空掠夺者卡兹克、虚空之女卡莎、时间刺客艾克</herosInFetter>
+        <effectOfFetter>
+            跳后排加攻速
+        </effectOfFetter>
+
+    </fetter>
+    <fetter>
+        <name>法师</name>
+        <herosInFetter>黑暗之女安妮、卡牌大师崔斯特、光辉女郎拉克丝、远古巫灵泽拉斯、九尾妖狐阿狸、暗黑元首辛德拉、暮光星灵佐伊、虚空之眼维克兹</herosInFetter>
+        <effectOfFetter>
+            加法强
+        </effectOfFetter>
+
+    </fetter>
+    <fetter>
+        <name>圣盾使</name>
+        <herosInFetter>德邦总管赵信、德玛西亚皇子嘉文四世、幻翎洛、万花通灵妮蔻</herosInFetter>
+        <effectOfFetter>
+            方技能加盾
+        </effectOfFetter>
+
+    </fetter>
+    <fetter>
+        <name>秘术师</name>
+        <herosInFetter>众星之子索拉卡、琴瑟仙女娑娜、天启者卡尔玛、仙灵女巫璐璐</herosInFetter>
+        <effectOfFetter>
+            加魔抗
+        </effectOfFetter>
+
+    </fetter>
+    <fetter>
+        <name>斗士</name>
+        <herosInFetter>虚空恐惧科加斯、蒸汽机器人布里茨、熔岩巨兽莫菲特、皮城执法官蔚</herosInFetter>
+        <effectOfFetter>
+            加生命值
+        </effectOfFetter>
+
+    </fetter>
+    <fetter>
+        <name>重装</name>
+        <herosInFetter>齐天大圣孙悟空、圣锤之毅波比、铁铠冥魂莫德凯撒、曙光女神雷欧娜、未来守护者杰斯</herosInFetter>
+        <effectOfFetter>
+            加护甲
+        </effectOfFetter>
+
+    </fetter>
+    <fetter>
+        <name>破法战士</name>
+        <herosInFetter>虚空行者卡萨丁、刀锋舞者艾瑞利亚、诺克萨斯之手德莱厄斯、魂锁典狱长锤石</herosInFetter>
+        <effectOfFetter>
+            加对面的耗蓝
+        </effectOfFetter>
+
+    </fetter>
+    <fetter>
+        <name>狙神</name>
+        <herosInFetter>寒冰射手艾希、皮城女警凯特琳、戏命师烬</herosInFetter>
+        <effectOfFetter>
+            离得越远伤害越高
+        </effectOfFetter>
+
+    </fetter>
+</fetters>

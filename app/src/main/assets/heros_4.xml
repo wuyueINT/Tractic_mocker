@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<Hero>
+<Heros>
     <Hero>
         <name>猴子</name>
         <race>未来战士</race>
@@ -54,4 +54,4 @@
         <profession>剑士</profession>
         <cost>4</cost>
     </Hero>
-</Hero>
+</Heros>

@@ -5,6 +5,8 @@ import androidx.core.content.ContextCompat;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentActivity;
 import androidx.fragment.app.FragmentPagerAdapter;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 import androidx.viewpager.widget.ViewPager;
 
 
@@ -19,6 +21,7 @@ import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
+import com.wuyue.recyclerview.DataRecyclerAdapter;
 import com.wuyue.recyclerview.Fragment02;
 import com.wuyue.recyclerview.Fragment03;
 import com.wuyue.recyclerview.Fragment04;
@@ -27,6 +30,8 @@ import com.wuyue.recyclerview.BlankFragment;
 
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -47,11 +52,14 @@ public class MainActivity extends FragmentActivity implements BlankFragment.Frag
     private int currentPage = 0;// 初始化当前页为0（第一页）
     private Button tabline;
     private Button clear;
+    private RecyclerView mRecyclerView;
 
     //这部分变量用于内容
     Map<Hero, Integer> chess;
     Map<String, Integer> raceMap;
     Map<String, Integer> proMap;
+    RecyclerView.Adapter adapter;
+    List<Map.Entry<String, Integer>> fetterList = new ArrayList<>();
 
     //动态权限申请
     private String[] PERMISSIONS_STORAGE = {
@@ -95,6 +103,7 @@ public class MainActivity extends FragmentActivity implements BlankFragment.Frag
 
         tv_main = findViewById(R.id.main_tv1);
         clear = findViewById(R.id.clear);
+        mRecyclerView = findViewById(R.id.recycler_data);
 
         vp = findViewById(R.id.viewPager);
         tv1 = findViewById(R.id.textView1);
@@ -199,6 +208,28 @@ public class MainActivity extends FragmentActivity implements BlankFragment.Frag
             }
         });
 
+        //显示羁绊信息
+        Map.Entry<String, Integer> entry = new Map.Entry<String, Integer>() {
+            @Override
+            public String getKey() {
+                return "dfafa";
+            }
+
+            @Override
+            public Integer getValue() {
+                return 4;
+            }
+
+            @Override
+            public Integer setValue(Integer value) {
+                return value;
+            }
+        };
+        fetterList.add(entry);
+        adapter = new DataRecyclerAdapter(this, fetterList);
+        mRecyclerView.setLayoutManager(new LinearLayoutManager(this));
+        mRecyclerView.setAdapter(adapter);
+
         //清空英雄
         clear.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -206,6 +237,7 @@ public class MainActivity extends FragmentActivity implements BlankFragment.Frag
                 chess.clear();
                 raceMap.clear();
                 proMap.clear();
+                adapter.notifyDataSetChanged();
                 tv_main.setText("");
             }
         });
@@ -250,27 +282,36 @@ public class MainActivity extends FragmentActivity implements BlankFragment.Frag
         }
 
         //整理英雄羁绊信息并输出
-        StringBuilder sb = new StringBuilder();
+        StringBuilder sb = new StringBuilder("当前选择的英雄：\n");
         for (Map.Entry<Hero, Integer> heroIntegerEntry : chess.entrySet()) {
             Hero hero0 = (Hero) ((Map.Entry) heroIntegerEntry).getKey();
             int num = (int) ((Map.Entry) heroIntegerEntry).getValue();
             sb.append(hero0.getName()).append(":").append(num).append(";");
         }
-        sb.append("\n");
+        sb.append("\n当前产生的羁绊：\n");
 
-        for (Map.Entry<String, Integer> raceIntegerEntry : raceMap.entrySet()) {
-            String race = (String) ((Map.Entry) raceIntegerEntry).getKey();
-            int num = (int) ((Map.Entry) raceIntegerEntry).getValue();
-            sb.append(race).append(":").append(num).append("\n");
-        }
-
-        for (Map.Entry<String, Integer> professionIntegerEntry : proMap.entrySet()) {
-            String pro = (String) ((Map.Entry) professionIntegerEntry).getKey();
-            int num = (int) ((Map.Entry) professionIntegerEntry).getValue();
-            sb.append(pro).append(":").append(num).append("\n");
-        }
-
+        //更新英雄信息
         tv_main.setText(sb.toString());
+
+        //排序羁绊列表并更新到视图
+        fetterList.clear();
+        fetterList.addAll(sortMap(raceMap, proMap));
+        adapter.notifyDataSetChanged();
+    }
+
+    //按value的从大到小排序map
+    private List<Map.Entry<String, Integer>> sortMap(Map<String, Integer> map1, Map<String, Integer> map2) {
+
+        List<Map.Entry<String, Integer>> tmpList = new ArrayList<>(map1.entrySet());
+        tmpList.addAll(new ArrayList<>(map2.entrySet()));
+        Collections.sort(tmpList, new Comparator<Map.Entry<String, Integer>>() {
+            @Override
+            public int compare(Map.Entry<String, Integer> o1, Map.Entry<String, Integer> o2) {
+                return o2.getValue().compareTo(o1.getValue());
+            }
+        });
+
+        return tmpList;
     }
 
 }

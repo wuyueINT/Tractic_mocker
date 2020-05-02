@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<Hero>
+<Heros>
     <Hero>
         <name>好运姐</name>
         <race>女武神</race>
@@ -42,4 +42,4 @@
         <profession>破法战士</profession>
         <cost>5</cost>
     </Hero>
-</Hero>
+</Heros>

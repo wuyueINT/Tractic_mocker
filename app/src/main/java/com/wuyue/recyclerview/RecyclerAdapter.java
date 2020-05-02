@@ -57,7 +57,6 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.VH> {
     }
 
 
-
     //recycler的属性
     public static class VH extends RecyclerView.ViewHolder{
 

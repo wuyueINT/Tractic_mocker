@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<Hero>
+<Heros>
     <Hero>
         <name>安妮</name>
         <race>机甲</race>
@@ -45,7 +45,7 @@
     <Hero>
         <name>诺克萨斯之手</name>
         <race>海盗</race>
-        <profession>破发战士</profession>
+        <profession>破法战士</profession>
         <cost>1</cost>
     </Hero>
     <Hero>
@@ -72,4 +72,4 @@
         <profession>圣盾使</profession>
         <cost>2</cost>
     </Hero>
-</Hero>
+</Heros>
